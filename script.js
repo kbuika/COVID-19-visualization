@@ -30,23 +30,27 @@ function setup(){
     // overlay the canvas over the tile map
     myMap.overlay(canvas);
 
-   for ( let row of casesData.rows) {
-       let county = row.get('county_name').toLowerCase();
-       let latlon = counties[county];
-       if (latlon) {
-        let lat = latlon[0];
-        let lon = latlon[1];
-        const pix = myMap.latLngToPixel(lat, lon);
-        fill(255, 0, 200); 
-        ellipse(pix.x, pix.y, 20, 20);
-       }
-       
-   }
+   
   
 }
 
 // p5.js draw
 function draw(){
     clear();
+    for ( let row of casesData.rows) {
+        let county = row.get('county_name').toLowerCase();
+        let latlon = counties[county];
+        if (latlon) {
+         let lat = latlon[0];
+         let lon = latlon[1];
+         const pix = myMap.latLngToPixel(lat, lon);
+         fill(255, 0, 200); 
+        ellipse(pix.x, pix.y, 20, 20);
+         
+        }
+        
+    }
+
+    
 
 }
