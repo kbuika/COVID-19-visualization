@@ -50,7 +50,7 @@ function draw(){
          let lon = latlon[1];
          const pix = myMap.latLngToPixel(lat, lon);
          let cases = row.get("confirmed_cases")
-         let diameter = sqrt(cases*100);
+         let diameter = sqrt(cases)*myMap.zoom();
          fill(255, 0, 200, 100); 
         ellipse(pix.x, pix.y, diameter, diameter);
          
