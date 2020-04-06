@@ -11,9 +11,10 @@ const mappa = new Mappa("Leaflet");
 const options = {
     lat: -0.023559,
     lng: 37.906193,
-    zoom: 6.8,
+    zoom: 6,
     style: "http://{s}.tile.osm.org/{z}/{x}/{y}.png"
 }
+
 
 function preload(){
     casesData = loadTable('cases.csv', 'header')
@@ -22,7 +23,9 @@ function preload(){
 
 // p5.js setup
 function setup(){
-    canvas = createCanvas(1200,640);
+
+    
+    canvas = createCanvas(1400,640);
     
 
     // tile map 
@@ -37,6 +40,8 @@ function setup(){
 // p5.js draw
 function draw(){
     clear();
+
+    
     for ( let row of casesData.rows) {
         let county = row.get('county_name').toLowerCase();
         let latlon = counties[county];
@@ -44,12 +49,16 @@ function draw(){
          let lat = latlon[0];
          let lon = latlon[1];
          const pix = myMap.latLngToPixel(lat, lon);
-         fill(255, 0, 200); 
-        ellipse(pix.x, pix.y, 20, 20);
+         let cases = row.get("confirmed_cases")
+         let diameter = sqrt(cases*100);
+         fill(255, 0, 200, 100); 
+        ellipse(pix.x, pix.y, diameter, diameter);
          
         }
         
     }
+
+    
 
     
 
