@@ -9,9 +9,9 @@ const mappa = new Mappa("Leaflet");
 
 // map options
 const options = {
-    lat: -0.023559,
-    lng: 37.906193,
-    zoom: 6,
+    lat: -0.900842,
+    lng: 48.230254,
+    zoom: 6.3,
     style: "http://{s}.tile.osm.org/{z}/{x}/{y}.png"
 }
 
