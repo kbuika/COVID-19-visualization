@@ -6,4 +6,4 @@ Site built using Javascript
 Map by Leaflet
 Visualization by Mappa
 
-![Image of the page]('./covidpage.png')
+![Image of the page](https://github.com/kibuikaCodes/COVID-19-visualization/blob/master/covidpage.PNG)
