@@ -7,10 +7,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.min.js" type="text/javascript"></script>
     <script src="https://unpkg.com/mappa-mundi@0.0.4/dist/mappa.min.js" type="text/javascript"></script>
     <script src="script.js" type="text/javascript"></script>
+    
 </head>
-<body>
+<body >
     <h2 class="title">COVID-19 Confirmed Cases in Kenya</h2>
     <h3 class="sub-title"><em>a visual representation</em></h3>
+    <p id="CounterVisitor"></p>
     
     <style>
         .title{
@@ -32,5 +34,24 @@
 
     </style>
     
+    
 </body>
+<div style="text-align:center; display: none"><script type="text/javascript" src="http://services.webestools.com/cpt_visits/21919-19-5.js"></script></div>
+<script>
+    var n = localStorage.getItem('on_load_counter');
+    
+    if (n === null) {
+      n = 0;
+    }
+    n++;
+    
+    localStorage.setItem("on_load_counter", n);
+    
+    nums = n.toString().split('').map(Number);
+    document.getElementById('CounterVisitor').innerHTML = '';
+    for (var i of nums) {
+      document.getElementById('CounterVisitor').innerHTML += '<span class="counter-item">' + i + '</span>';
+    }
+    
+    </script>
 </html>
