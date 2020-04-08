@@ -6,4 +6,6 @@
 ### Map by Leaflet
 ### Visualization by Mappa
 
+### Updates : Map By ARCGIS
+
 ![Image of the page](https://github.com/kibuikaCodes/COVID-19-visualization/blob/master/covidpage.PNG)
