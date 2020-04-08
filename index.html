@@ -28,9 +28,47 @@
           height: 100%;
           width: 100%;
         }
+        .body {
+            overflow: scroll;
+        
+        }
+        .body::-webkit-scrollbar {
+        width: 1em;
+            
+        }
+        
+        .body::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        .body::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+        outline: 1px solid slategrey;
+        }
+        @media only screen and (max-width: 600px) {
+        
+            .body {
+                overflow: scroll;
+            }
+            .body::-webkit-scrollbar {
+            width: 5em;
+                
+            }
+            
+            .body::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            }
+            
+            .body::-webkit-scrollbar-thumb {
+            background-color: darkgrey;
+            outline: 1px solid slategrey;
+            }
+        
+        }
+        
       </style>
 </head>
-<body style="overflow: scroll;">
+<body class="body">
     <div>
     <h2 class="title">COVID-19 Confirmed Cases in Kenya</h2>
     <h3 class="sub-title"><em>a visual representation</em></h3>
@@ -56,14 +94,7 @@
             justify-content: center;
             display: flex;
         }
-        #viewDiv {
-        padding: 0;
-        margin: 0;
-        height: 100%;
-        width: 100%;
         
-        
-      }
       #footer {
           align-items: center;
           justify-content: center;
