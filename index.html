@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A visual representation of COVID-19 in Kenya. The visualization shows the confirmed cases per County">
     <meta name="keywords" content="corona virus in kenya, corona, corona virus in mombasa, corona virus in nairobi, COVID-19 in kenya, COVID-19 in mombasa, COVID-19 in nairobi">
-    <title>COVID-19 in Kenya</title>
+    <title>COVID-19 | Kenya</title>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.min.js" type="text/javascript"></script> -->
     <!-- <script src="https://unpkg.com/mappa-mundi@0.0.4/dist/mappa.min.js" type="text/javascript"></script> -->
     <link rel="stylesheet" href="https://js.arcgis.com/4.14/esri/themes/light/main.css">
@@ -30,6 +30,7 @@
         }
         body {
             overflow: scroll;
+            background-color: rgb(173, 206, 146);
         
         }
         body::-webkit-scrollbar {
@@ -69,22 +70,45 @@
       </style>
 </head>
 <body style="overflow: scroll;">
-    <div>
-    <h2 class="title">COVID-19 Confirmed Cases in Kenya</h2>
-    <h3 class="sub-title"><em>a visual representation (as of 07/04/2020)</em></h3>
-    <a href="visitors.html">useful links</a>
-    </div>
+    
+            <div class="titles" id="top">
+                <h2 class="title">COVID-19 Confirmed Cases in Kenya</h2>
+                <h3 class="sub-title"><em>a visual representation</em></h3>
+                    <div>
+                        <a href="visitors.html" style="float: left; margin-right: 1em; text-decoration: none;">useful links</a>
+                        <a href="#footer" style="float: right; margin-left: 1em; text-decoration: none;">View Map</a>
+                    </div>
+            </div>
+        <div class='content-div'>
+        <div>
+            <iframe style="width:100%"; width="560" height="392" src="https://coronavirus.app/chart/bVHiTolbUJGHIeVht3eG/infected?embed=true" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div>
+            <iframe style="width:100%"; width="560" height="392" src="https://coronavirus.app/chart/bVHiTolbUJGHIeVht3eG/sick?embed=true" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div>
+            <iframe style="width:100%"; width="560" height="392" src="https://coronavirus.app/chart/bVHiTolbUJGHIeVht3eG/recovered?embed=true" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div>
+            <iframe style="width:100%"; width="560" height="392" src="https://coronavirus.app/chart/bVHiTolbUJGHIeVht3eG/dead?embed=true" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
 
+        
+    </div>
     <div id="viewDiv"></div>
     
     <style>
         .title{
             font-style: normal;
-            font-size: 1.5em;
-            font-weight: 800;
-            align-items: center;
-            justify-content: center;
-            display: flex;
+            font-size: 3vw;
+            font-weight: 900;
+            line-height: 129.69%;
+            /* or 78px */
+            letter-spacing: 0.03em;
+            margin-bottom: 0;
+            margin-left: 0px;
+            
+            
         }
         .sub-title{
             font-style: normal;
@@ -99,11 +123,58 @@
           align-items: center;
           justify-content: center;
           display: flex;
+          flex-direction: column;
+          margin-bottom: 3em;
       }
+      .content-div{
+          margin: 5em;
+
+          
+      }
+        .titles{
+            align-items: center;
+             justify-content: center;
+             display: flex;
+             margin: .5em;
+             flex-direction: column;
+            
+        }
+
+      @media only screen and (max-width: 600px) {
+         .content-div {
+             margin: 1em;
+         }
+         .titles {
+             align-items: center;
+             justify-content: center;
+             display: column;
+             margin: .5em;
+         }    
+         .title {
+            font-style: normal;
+            font-size: 5vw;
+            font-weight: 900;
+            line-height: 129.69%;
+            /* or 78px */
+            letter-spacing: 0.03em;
+            margin-bottom: 0;
+            margin-left: 0px;
+         } 
+         #footer {
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1.5em;
+         }
+              
+    }
 
     </style>
 
-    <div id="footer"><p>Data Source : <a href="http://www.health.go.ke/#1585137302557-b337f64d-c55873d1-981a">MOH</a></p></div>
+    <div id="footer"><p><em>The map was last updated on (07/04/2020)</em></p><p>Data Source : <a href="http://www.health.go.ke/#1585137302557-b337f64d-c55873d1-981a" style="text-decoration: none;">MOH</a></p>
+        <a href="#top" style="text-decoration: none;">Back to top</a>
+    </div>
     
     
 </body>
